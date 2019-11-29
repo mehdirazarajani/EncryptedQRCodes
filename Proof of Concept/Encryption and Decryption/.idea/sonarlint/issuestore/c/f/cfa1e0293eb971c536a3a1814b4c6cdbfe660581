@@ -1,0 +1,5 @@
+
+csquid:UselessImportCheck"3Remove this unused import 'java.security.Provider'.(Χ„αγψÿÿÿÿ8οι΅²λ-
+Osquid:S4432³"0Use Galois/Counter Mode (GCM/NoPadding) instead.(Ά¨’Σ8Ρ―²λ-
+«%squid:RedundantThrowsDeclarationCheck§"mRemove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a runtime exception.(Ή‘ψϊÿÿÿÿ8Ή½¨²λ-
+Asquid:S5164#"#Call "remove()" on "cipherWrapper".(Ξ»ί8Ή½¨²λ-

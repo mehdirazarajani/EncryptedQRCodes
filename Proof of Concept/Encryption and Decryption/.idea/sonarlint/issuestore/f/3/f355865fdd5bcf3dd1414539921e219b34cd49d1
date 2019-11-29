@@ -1,0 +1,7 @@
+
+Msquid:S1068"1Remove this unused "initialVector" private field.(±Ú¶Ù8Ò£Ê®ë-
+Qsquid:S1068"0Remove this unused "secureRandom" private field.(ùîÒ™üÿÿÿÿ8Ò£Ê®ë-
+jsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(’€Ó£8ÒŠö—ë-
+Tsquid:S1068"3Remove this unused "single_instance" private field.(°Þ¦ûúÿÿÿÿ8ˆ™ý—ë-
+Isquid:S1068"-Remove this unused "secretKey" private field.(ÂŸ®¸8ˆ™ý—ë-
+{squid:S3008"ZRename this field "single_instance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Þ¦ûúÿÿÿÿ8Íýö—ë-

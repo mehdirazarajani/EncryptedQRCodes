@@ -35,8 +35,8 @@ public class AesGcmEncryption implements AuthenticatedEncryption {
     }
 
     @Override
-    public byte[] encrypt(byte[] rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException {
-        if (rawEncryptionKey.length < 16) {
+    public byte[] encrypt(String rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException {
+        if (rawEncryptionKey.getBytes().length < 16) {
             throw new IllegalArgumentException("key length must be longer than 16 bytes");
         }
         byte[] iv = null;
@@ -46,7 +46,7 @@ public class AesGcmEncryption implements AuthenticatedEncryption {
             secureRandom.nextBytes(iv);
 
             final Cipher cipherEnc = getCipher();
-            cipherEnc.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(rawEncryptionKey, "AES"), new GCMParameterSpec(TAG_LENGTH_BIT, iv));
+            cipherEnc.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(rawEncryptionKey.getBytes(), "AES"), new GCMParameterSpec(TAG_LENGTH_BIT, iv));
 
             encrypted = cipherEnc.doFinal(rawData);
 
@@ -65,7 +65,7 @@ public class AesGcmEncryption implements AuthenticatedEncryption {
 
 
     @Override
-    public byte[] decrypt(byte[] rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException {
+    public byte[] decrypt(String rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException {
         byte[] iv = null;
         byte[] encrypted = null;
         try {
@@ -78,7 +78,7 @@ public class AesGcmEncryption implements AuthenticatedEncryption {
             byteBuffer.get(encrypted);
 
             final Cipher cipherDec = getCipher();
-            cipherDec.init(Cipher.DECRYPT_MODE, new SecretKeySpec(rawEncryptionKey, "AES"), new GCMParameterSpec(TAG_LENGTH_BIT, iv));
+            cipherDec.init(Cipher.DECRYPT_MODE, new SecretKeySpec(rawEncryptionKey.getBytes(), "AES"), new GCMParameterSpec(TAG_LENGTH_BIT, iv));
             return cipherDec.doFinal(encrypted);
         } catch (Exception e) {
             throw new AuthenticatedEncryptionException("could not decrypt", e);

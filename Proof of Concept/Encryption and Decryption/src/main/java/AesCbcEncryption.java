@@ -44,8 +44,8 @@ final class AesCbcEncryption implements AuthenticatedEncryption {
     }
 
     @Override
-    public byte[] encrypt(byte[] rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException {
-        checkAesKey(rawEncryptionKey);
+    public byte[] encrypt(String rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException {
+        checkAesKey(rawEncryptionKey.getBytes());
 
         byte[] iv = null;
         byte[] encrypted = null;
@@ -55,10 +55,10 @@ final class AesCbcEncryption implements AuthenticatedEncryption {
             secureRandom.nextBytes(iv);
 
             final Cipher cipherEnc = getCipher();
-            cipherEnc.init(Cipher.ENCRYPT_MODE, createEncryptionKey(rawEncryptionKey), new IvParameterSpec(iv));
+            cipherEnc.init(Cipher.ENCRYPT_MODE, createEncryptionKey(rawEncryptionKey.getBytes()), new IvParameterSpec(iv));
             encrypted = cipherEnc.doFinal(rawData);
 
-            mac = macCipherText(rawEncryptionKey, encrypted, iv);
+            mac = macCipherText(rawEncryptionKey.getBytes(), encrypted, iv);
 
             ByteBuffer byteBuffer = ByteBuffer.allocate(1 + iv.length + 1 + mac.length + encrypted.length);
             byteBuffer.put((byte) iv.length);
@@ -116,8 +116,8 @@ final class AesCbcEncryption implements AuthenticatedEncryption {
     }
 
     @Override
-    public byte[] decrypt(byte[] rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException {
-        checkAesKey(rawEncryptionKey);
+    public byte[] decrypt(String rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException {
+        checkAesKey(rawEncryptionKey.getBytes());
 
         byte[] iv = null;
         byte[] mac = null;
@@ -136,10 +136,10 @@ final class AesCbcEncryption implements AuthenticatedEncryption {
             encrypted = new byte[byteBuffer.remaining()];
             byteBuffer.get(encrypted);
 
-            verifyMac(rawEncryptionKey, encrypted, iv, mac);
+            verifyMac(rawEncryptionKey.getBytes(), encrypted, iv, mac);
 
             final Cipher cipherDec = getCipher();
-            cipherDec.init(Cipher.DECRYPT_MODE, createEncryptionKey(rawEncryptionKey), new IvParameterSpec(iv));
+            cipherDec.init(Cipher.DECRYPT_MODE, createEncryptionKey(rawEncryptionKey.getBytes()), new IvParameterSpec(iv));
             return cipherDec.doFinal(encrypted);
         } catch (Exception e) {
             throw new AuthenticatedEncryptionException("could not decrypt", e);

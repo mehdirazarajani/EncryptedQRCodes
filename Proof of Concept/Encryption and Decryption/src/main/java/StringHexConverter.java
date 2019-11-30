@@ -27,6 +27,8 @@ public class StringHexConverter {
     @NotNull
     @Contract("_ -> new")
     public static String hexToString(@NotNull String txtInHex) {
+        if (txtInHex.length() % 2 != 0)
+            txtInHex = '0' + txtInHex;
         byte[] txtInByte = new byte[txtInHex.length() / 2];
         int j = 0;
         for (int i = 0; i < txtInHex.length(); i += 2) {

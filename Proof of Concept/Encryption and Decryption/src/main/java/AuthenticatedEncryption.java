@@ -23,7 +23,7 @@ public interface AuthenticatedEncryption {
      * @return encrypted content
      * @throws AuthenticatedEncryptionException if any crypto fails
      */
-    byte[] encrypt(byte[] rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException;
+    byte[] encrypt(String rawEncryptionKey, byte[] rawData) throws AuthenticatedEncryptionException;
 
     /**
      * Decrypt and verifies the authenticity of given encrypted data
@@ -33,7 +33,7 @@ public interface AuthenticatedEncryption {
      * @return decrypted, original data
      * @throws AuthenticatedEncryptionException if any crypto fails
      */
-    byte[] decrypt(byte[] rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException;
+    byte[] decrypt(String rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException;
 
     /**
      * Get the required key size length in bytes for given security strength type

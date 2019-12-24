@@ -1,7 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        byte[] plainText = HexBytesConverter.decodeHexString(StringHexConverter.stringToHex("https://www.google.com/"));
+        String s = "Some people send the most random text messages about the most random things. Often, for the recipie";
+        String s1 = "4984b1d97f8213f65ca68f92c874161473478a5d7d7736154cea4773a0e391fdb441302e4bcc415448762a55260981659041aba0180d7548cc73ba7d3a0890a33f12947b939c93fe562e380edbbe2b807c0707394a0ea40784bac271e5cc981b6c540d44512942659bbc74e3dd53d9a316f5b9e3ccc67c1bef059f2b391dfc16";
+//        byte[] plainText = HexBytesConverter.decodeHexString(StringHexConverter.stringToHex(s));
+        byte[] plainText = HexBytesConverter.decodeHexString(s1);
         byte[] correctEncryptedMsg;
         String rawEncryptionKey = "hardKey97531****";    // 16 Bytes key
         String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgFGVfrY4jQSoZQWWygZ83roKXWD4YeT2x2p41dGkPixe73rT2IW04glagN2vgoZoHuOPqa5and6kAmK2ujmCHu6D1auJhE2tXP+yLkpSiYMQucDKmCsWMnW9XlC5K7OSL77TXXcfvTvyZcjObEz6LIBRzs6+FqpFbUO9SJEfh6wIDAQAB";
@@ -10,7 +13,7 @@ public class Main {
 
         // only change this through some selector
         AuthenticatedEncryptionEnum encryptionEnum = AuthenticatedEncryptionEnum.Assym_RSA_ECB_PKCS1Padding;
-        boolean doEncryption = true;
+        boolean doEncryption = false;
 
         switch (encryptionEnum){
             case Sym_AES_GCM_NoPadding:
@@ -37,13 +40,13 @@ public class Main {
                 encryptedMsg = authenticatedEncryption.encrypt(rawEncryptionKey, plainText);
                 System.out.println("Encrypted Msg is: ");
                 System.out.println(StringBytesConverter.encodeString(encryptedMsg));
-//                System.out.println(StringHexConverter.hexToString(HexBytesConverter.encodeHexString(encryptedMsg)));
+                System.out.println(HexBytesConverter.encodeHexString(encryptedMsg));
             } catch (AuthenticatedEncryptionException e) {
                 e.printStackTrace();
             }
         } else {
             try {
-                decryptedMsg = authenticatedEncryption.decrypt(rawEncryptionKey, correctEncryptedMsg);
+                decryptedMsg = authenticatedEncryption.decrypt(rawEncryptionKey, plainText);
                 System.out.println("Decrypted Msg is: ");
                 System.out.println(StringBytesConverter.encodeString(decryptedMsg));
                 System.out.println(StringHexConverter.hexToString(HexBytesConverter.encodeHexString(decryptedMsg)));

@@ -1,0 +1,2 @@
+Source of Bad Words:
+https://github.com/RobertJGabriel/Google-profanity-words

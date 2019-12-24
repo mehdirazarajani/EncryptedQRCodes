@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8acf91a2-430e-421e-9e7d-2834e5128f4c" name="Default Changelist" comment="" />
+    <list default="true" id="8acf91a2-430e-421e-9e7d-2834e5128f4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Malicious Content Detector/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29f027e36ff4a5d206d60bd113159c153fffe133" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29f027e36ff4a5d206d60bd113159c153fffe133" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49ce07c9342db90d1f8ad2fd3b528a7913378ab6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49ce07c9342db90d1f8ad2fd3b528a7913378ab6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bae9ce0125a9e3d18f490cd6d3781392060dad3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cfa1e0293eb971c536a3a1814b4c6cdbfe660581" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cfa1e0293eb971c536a3a1814b4c6cdbfe660581" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AesCbcEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AesCbcEncryption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +123,19 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="new String(StringBytesConverter.encodeString(rawEncryptionKey), &quot;UTF-8&quot;)" language="JAVA" />
-        <watch expression="HexBytesConverter.encodeHexString(encryptedMsg)" language="JAVA" />
-        <watch expression="new X509EncodedKeySpec(base64PublicKey.getBytes())" language="JAVA" />
-        <watch expression="StringBytesConverter.encodeString(StringBytesConverter.decodeString(&quot;MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJvJqNQ4d2nJiUd7WOqk74XKbeg18zEimrgP8SdShV2-SHtu5YBISxuYGiFYvgI_RUkWakbFhXKMeC-pt0FnLUg14HLDDq0Q-n7f-tu09231rwAA-f7jdEwTAumyr6jCyCh4902OfzY0YGKYq94omp48XsP4_AhLQ2WMWKOeujnpAgMBAAECgYByvqrifSC_Q1kg1GJemdNuOPaQ9cPFKhbJgbx-2RIwROpAOCNERHtFvNdqPmHdZ9rRhXgL3op3H62adafrvWIkydES1yHhauI6PzENLwUoaSWDqSAFm0JY_vu7QPcF5dVvsMzubnwLfFTK2MZQu-gbmu1RtG_n16C8CU6t5DK87QJBANaIdgIx0S0Zew1O0NJqxZIxNBYcG9cQuE0fAJVEdRNMRicSm4I-AC7-MhJgUeIiXKbe6BKp61l7Az_21w0wSScCQQC55lvSJIVQRClAhmA3VTwr2_WT1vu6mFLLSmMD1W9SqCojHTfCk9aIDsFyhfDeawWByYJWWgY0vClUQPb5nq5vAkBK9K7WoXVGXqrBwZHwkuGo7IwYVYXcpLjgKT7Y6GxHa9Tu_e9bmDIUOThhd0nkysC4hRVsv_W889_0z1fgAcjtAkAAoqjtrvJFs_XwIoVxqvjprXbJapKxsJOX3kk4WiJnReve8tqd76NsE6DVo1-PYw5Bw06OvQAIbhw2DYLKl6BBAkBVHYEsay95hfhyZcfQIwyLTmQ3f7oRAe1zueR22azqVb2CsPoqCvD-BvCDGSb3txlLKT4_JoQ8WdGjSZ-bo8kW&quot;)).equals(&quot;MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJvJqNQ4d2nJiUd7WOqk74XKbeg18zEimrgP8SdShV2-SHtu5YBISxuYGiFYvgI_RUkWakbFhXKMeC-pt0FnLUg14HLDDq0Q-n7f-tu09231rwAA-f7jdEwTAumyr6jCyCh4902OfzY0YGKYq94omp48XsP4_AhLQ2WMWKOeujnpAgMBAAECgYByvqrifSC_Q1kg1GJemdNuOPaQ9cPFKhbJgbx-2RIwROpAOCNERHtFvNdqPmHdZ9rRhXgL3op3H62adafrvWIkydES1yHhauI6PzENLwUoaSWDqSAFm0JY_vu7QPcF5dVvsMzubnwLfFTK2MZQu-gbmu1RtG_n16C8CU6t5DK87QJBANaIdgIx0S0Zew1O0NJqxZIxNBYcG9cQuE0fAJVEdRNMRicSm4I-AC7-MhJgUeIiXKbe6BKp61l7Az_21w0wSScCQQC55lvSJIVQRClAhmA3VTwr2_WT1vu6mFLLSmMD1W9SqCojHTfCk9aIDsFyhfDeawWByYJWWgY0vClUQPb5nq5vAkBK9K7WoXVGXqrBwZHwkuGo7IwYVYXcpLjgKT7Y6GxHa9Tu_e9bmDIUOThhd0nkysC4hRVsv_W889_0z1fgAcjtAkAAoqjtrvJFs_XwIoVxqvjprXbJapKxsJOX3kk4WiJnReve8tqd76NsE6DVo1-PYw5Bw06OvQAIbhw2DYLKl6BBAkBVHYEsay95hfhyZcfQIwyLTmQ3f7oRAe1zueR22azqVb2CsPoqCvD-BvCDGSb3txlLKT4_JoQ8WdGjSZ-bo8kW&quot;)" language="JAVA" />
-        <watch expression="getPublicKey(&quot;MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCbyajUOHdpyYlHe1jqpO-Fym3oNfMxIpq4D_EnUoVdvkh7buWASEsbmBohWL4CP0VJFmpGxYVyjHgvqbdBZy1INeByww6tEPp-3_rbtPdt9a8AAPn-43RMEwLpsq-owsgoePdNjn82NGBimKveKJqePF7D-PwIS0NljFijnro56QIDAQAB&quot;)" language="JAVA" />
+        <watch expression="StringBytesConverter.encodeString(encryptedMsg)" language="JAVA" />
+        <watch expression="StringHexConverter.stringToHex(HexBytesConverter.encodeHexString(encryptedMsg))" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

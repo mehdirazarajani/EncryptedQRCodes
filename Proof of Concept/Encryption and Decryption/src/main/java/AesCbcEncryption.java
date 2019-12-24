@@ -144,9 +144,9 @@ final class AesCbcEncryption implements AuthenticatedEncryption {
         } catch (Exception e) {
             throw new AuthenticatedEncryptionException("could not decrypt", e);
         } finally {
-            Bytes.wrap(iv).mutable().secureWipe();
-            Bytes.wrap(encrypted).mutable().secureWipe();
-            Bytes.wrap(mac).mutable().secureWipe();
+//            Bytes.wrap(iv).mutable().secureWipe();
+//            Bytes.wrap(encrypted).mutable().secureWipe();
+//            Bytes.wrap(mac).mutable().secureWipe();
         }
     }
 

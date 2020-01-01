@@ -1,4 +1,14 @@
 
-lsquid:HiddenFieldCheck`">Rename "privateKey" which hides the field declared at line 12.(ÓâĞ¤üÿÿÿÿ8ÕëÒÅë-
-fsquid:HiddenFieldCheckS"=Rename "publicKey" which hides the field declared at line 13.(ßÔ¥º8ÕëÒÅë-
-Jsquid:S4426"'Use a key length of at least 2048 bits.(¦¹Çğùÿÿÿÿ8àºÉÅë-
+gsquid:S2147P"DCombine this catch with the one at line 72, which has the same body.(©Ë¸Ãşÿÿÿÿ8Û×å»õ-
+Jsquid:S4426"'Use a key length of at least 2048 bits.(¦¹Çğùÿÿÿÿ8àºÉÅë-
+fsquid:HiddenFieldCheck"=Rename "publicKey" which hides the field declared at line 16.(ßÔ¥º8ÕëÒÅë-
+bsquid:S2147J"DCombine this catch with the one at line 72, which has the same body.(Ë‡…¨8î©ä»õ-
+bsquid:S2147^"DCombine this catch with the one at line 92, which has the same body.(Ë‡…¨8£á»õ-
+bsquid:S2147N"DCombine this catch with the one at line 72, which has the same body.(çŞ¡Ğ8Û×å»õ-
+Dsquid:S1168S"&Return an empty array instead of null.(¥¹ï8ì ê»õ-
+gsquid:S2147L"DCombine this catch with the one at line 72, which has the same body.(“³Ûİüÿÿÿÿ8İ†å»õ-
+msquid:HiddenFieldCheckŒ">Rename "privateKey" which hides the field declared at line 15.(ÓâĞ¤üÿÿÿÿ8ÕëÒÅë-
+xsquid:S11926"UDefine a constant instead of duplicating this literal "RSA/ECB/PKCS1Padding" 4 times.(õĞ·¦ıÿÿÿÿ8¯Üà»õ-
+bsquid:S2147`"DCombine this catch with the one at line 92, which has the same body.(çŞ¡Ğ8€³í»õ-
+gsquid:S2147b"DCombine this catch with the one at line 92, which has the same body.(©Ë¸Ãşÿÿÿÿ8€³í»õ-
+gsquid:S2147d"DCombine this catch with the one at line 92, which has the same body.(“³Ûİüÿÿÿÿ8€³í»õ-

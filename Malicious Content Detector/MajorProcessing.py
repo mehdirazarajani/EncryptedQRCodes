@@ -59,7 +59,7 @@ def get_profanity_probability(sentence):
 def detect_content_type(sentence):
     text_regex = r"^[a-zA-Z]+(([a-zA-Z ])?[a-zA-Z]*)*$"
     email_address_regex = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-    phone_number_regex = r"^[a-zA-Z: ]*[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+    phone_number_regex = r"^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
     website_regex = r"^(https?:\/\/)?(www\.)?([a-zA-Z0-9]+(-?[a-zA-Z0-9])*\.)+[\w]{2,}(\/\S*)?$"
 
     result = 'Undefined'

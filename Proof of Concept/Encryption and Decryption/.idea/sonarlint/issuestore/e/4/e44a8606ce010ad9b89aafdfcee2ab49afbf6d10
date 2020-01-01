@@ -1,2 +1,5 @@
 
-asquid:S2583#"CChange this condition so that it does not always evaluate to "true"(ÿãòÀ8ÀŠËêë-
+bsquid:S2583T"DChange this condition so that it does not always evaluate to "false"(ÿãòÀ8ÀŠËêë-
+Jsquid:S4426"'Use a key length of at least 2048 bits.(¦¹Çğùÿÿÿÿ8ìÉ†ºõ-
+[squid:S1481)"8Remove this unused "correctEncryptedMsg" local variable.(óË›°ÿÿÿÿÿ8ìÉ†ºõ-
+Xsquid:UselessImportCheck"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8üéÓºõ-

@@ -85,4 +85,4 @@ if __name__ == '__main__':
     corpus = data['url']
     vectorizer.fit_transform(corpus)
 
-    app.run(debug=True)
+    app.run(host='172.16.64.109',port = 5000)

@@ -1,7 +1,10 @@
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
@@ -60,11 +63,52 @@ public class RsaEcbEncryption implements AuthenticatedEncryption {
         }
     }
 
+    public byte[] encrypt(String data, PublicKey publicKey){
+        Cipher cipher = null;
+        try {
+            cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+            return cipher.doFinal(data.getBytes());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String decrypt(byte[] data, PrivateKey privateKey){
+        Cipher cipher = null;
+        try {
+            cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(Cipher.DECRYPT_MODE, privateKey);
+            return new String(cipher.doFinal(data));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
     public byte[] decrypt(String rawEncryptionKey, byte[] encryptedData) throws AuthenticatedEncryptionException {
         try {
             final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             if (useKeyStr) {
-                cipher.init(Cipher.ENCRYPT_MODE, getPrivateKey(rawEncryptionKey));
+                cipher.init(Cipher.DECRYPT_MODE, getPrivateKey(rawEncryptionKey));
             } else {
                 cipher.init(Cipher.DECRYPT_MODE, privateKey);
             }

@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8acf91a2-430e-421e-9e7d-2834e5128f4c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49ce07c9342db90d1f8ad2fd3b528a7913378ab6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49ce07c9342db90d1f8ad2fd3b528a7913378ab6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63cc06728dc1152bb50b50943ade239b338ce22a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63cc06728dc1152bb50b50943ade239b338ce22a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RsaEcbEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RsaEcbEncryption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/RsaEcbEncryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/RsaEcbEncryption.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,8 +127,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>42</line>
+          <line>88</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -128,6 +146,10 @@
       <configuration name="Application">
         <watch expression="StringBytesConverter.encodeString(encryptedMsg)" language="JAVA" />
         <watch expression="StringHexConverter.stringToHex(HexBytesConverter.encodeHexString(encryptedMsg))" language="JAVA" />
+        <watch expression="StringBytesConverter.encodeString(((RSAPrivateCrtKeyImpl) pair.getPrivate()).key)" language="JAVA" custom="sun.security.rsa.RSAPrivateCrtKeyImpl" />
+        <watch expression="Base64.getEncoder().encodeToString(privateKey.getEncoded())" language="JAVA" />
+        <watch expression="Base64.getEncoder().encodeToString(((RSAPrivateCrtKeyImpl) privateKey).key)" language="JAVA" custom="sun.security.rsa.RSAPrivateCrtKeyImpl" />
+        <watch expression="StringBytesConverter.decodeString(StringBytesConverter.encodeString(temp))" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
